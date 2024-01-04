@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "745826634629",
+    "project_id": "logistics-now",
+    "storage_bucket": "logistics-now.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745826634629:android:80e872da18a831c4f412ec",
+        "android_client_info": {
+          "package_name": "com.example.logistics_now"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkzR2vuArSrBFPKQEXu_84v0HA7-paN5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
