@@ -31,8 +31,9 @@ class ApiCallHelper {
         } else {
           Toast.error("Something went wrong");
         }
+      } else {
+        Toast.error("Something went wrong");
       }
-      Toast.error("Something went wrong");
       throw Exception('Failed to make GET request: $dioError');
     }
   }

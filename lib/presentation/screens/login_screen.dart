@@ -24,7 +24,6 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Padding(
           padding: const EdgeInsets.all(32),
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
                 height: kToolbarHeight,
@@ -62,30 +61,10 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               sizedBoxH20,
               PrimaryButton("Login", onPressed: () {
+                FocusManager.instance.primaryFocus?.unfocus();
                 AuthenticationServices().authenticateUser(
                     _emailTEC.text.trim(), _passwordTEC.text.trim());
               }),
-              // sizedBoxH30,
-              // const Text(
-              //   "New User, Register",
-              //   style: TextStyle(color: Colors.white70, fontSize: 15),
-              // ),
-              // sizedBoxH8,
-              // InkWell(
-              //   hoverColor: Colors.blue,
-              //   highlightColor: Colors.green,
-              //   child: const Text(
-              //     "Click Here",
-              //     style: TextStyle(
-              //         color: Colors.white,
-              //         fontSize: 16,
-              //         fontWeight: FontWeight.bold),
-              //   ),
-              //   onTap: () {
-              //     // Navigator.of(context).push(MaterialPageRoute(
-              //     //     builder: (context) => const SignupScreen()));
-              //   },
-              // ),
             ],
           ),
         ),

@@ -1,6 +1,8 @@
+import 'dart:developer';
+
 import 'package:equatable/equatable.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:logistics_now/core/widgets/toast.dart';
 import 'package:logistics_now/data/location_value.dart';
 import 'package:logistics_now/domain/services/location_search_service.dart';
 
@@ -18,7 +20,8 @@ class HomeCubit extends Cubit<HomeState> {
         locationValue =
             await LocationSearchService().fetchLocationData(searchedText);
       } catch (e) {
-        Toast.error("Something went wrong");
+        FocusManager.instance.primaryFocus?.unfocus();
+        log("Something went wrong");
       }
     }
     emit(HomeData(id: DateTime.now()));

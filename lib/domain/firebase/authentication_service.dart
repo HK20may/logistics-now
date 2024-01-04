@@ -15,7 +15,7 @@ class AuthenticationServices {
         email: emailId,
         password: password,
       );
-
+      Toast.info("Login Successful");
       RouteHelper.pushReplacement(Routes.HOME);
     } on FirebaseAuthException catch (e) {
       if (e.code == "email-already-in-use") {
@@ -24,17 +24,22 @@ class AuthenticationServices {
             email: emailId,
             password: password,
           );
+          Toast.info("Login Successful");
           RouteHelper.pushReplacement(Routes.HOME);
         } on FirebaseAuthException catch (e) {
           if (e.code == 'invalid-credential' || e.code == 'wrong-password') {
             Toast.error("Invalid Credentials");
           } else {
-            Toast.error("Something went wrong");
+            Toast.error(e.toString());
           }
         } catch (e) {
           log('Error authenticating: $e');
           Toast.error("Something went wrong");
         }
+      } else if (e.code == "invalid-email") {
+        Toast.error("The email is badly formatted");
+      } else if (e.code == "weak-password") {
+        Toast.error("6 character password is required");
       } else {
         Toast.error("Something went wrong");
       }
