@@ -39,7 +39,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               BlocBuilder<HomeCubit, HomeState>(builder: (context, state) {
                 if (_searchTextEditingController.value.text.isEmpty) {
-                  return const SizedBox.shrink();
+                  return Expanded(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Center(
+                        child: Image.asset(AppAssetsPath.emptyBoxIcon,
+                            height: 180, width: 180),
+                      ),
+                    ),
+                  );
                 }
                 if (_searchTextEditingController.value.text.length <= 2) {
                   return const InfoWidget(

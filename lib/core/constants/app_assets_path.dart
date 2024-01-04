@@ -3,4 +3,5 @@ class AppAssetsPath {
   static const loginLogo = "assets/images/login_logo.gif";
   static const logisticsNowIcon = "assets/images/logistics_now_icon.png";
   static const noResultsIcon = "assets/images/no_results_icon.png";
+  static const emptyBoxIcon = "assets/images/empty_box_icon.png";
 }
